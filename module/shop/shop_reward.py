@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 from module.shop.shop_core import CoreShop
 from module.shop.shop_general import GeneralShop
 from module.shop.shop_guild import GuildShop
 from module.shop.shop_medal import MedalShop2
 from module.shop.shop_merit import MeritShop
+=======
+from module.shop.shop_core import CoreShop, CoreShop_250814
+from module.shop.shop_general import GeneralShop, GeneralShop_250814
+from module.shop.shop_guild import GuildShop, GuildShop_250814
+from module.shop.shop_medal import MedalShop2, MedalShop2_250814
+from module.shop.shop_merit import MeritShop, MeritShop_250814
+>>>>>>> master
 from module.shop.ui import ShopUI
 
 
@@ -44,5 +52,29 @@ class RewardShop(ShopUI):
             self.shop_tab.set(main=self, left=1)
             self.shop_nav.set(main=self, upper=3)
             MedalShop2(self.config, self.device).run()
+<<<<<<< HEAD
+=======
+        elif self.config.SERVER in ['cn']:
+            self.device.click_record_clear()
+            self.shop_tab_250814.set(main=self, upper=1)
+            self.shop_nav_250814.set(main=self, left=2)
+            MeritShop_250814(self.config, self.device).run()
+
+            self.device.click_record_clear()
+            self.shop_tab_250814.set(main=self, upper=1)
+            self.shop_nav_250814.set(main=self, left=3)
+            GuildShop_250814(self.config, self.device).run()
+
+            # core limited, core monthly, medal, prototype
+            self.device.click_record_clear()
+            self.shop_tab_250814.set(main=self, upper=2)
+            self.monthly_shop_nav_250814.set(main=self, left=2)
+            CoreShop_250814(self.config, self.device).run()
+
+            self.device.click_record_clear()
+            self.shop_tab_250814.set(main=self, upper=2)
+            self.monthly_shop_nav_250814.set(main=self, left=3)
+            MedalShop2_250814(self.config, self.device).run()
+>>>>>>> master
 
         self.config.task_delay(server_update=True)
